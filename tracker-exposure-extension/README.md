@@ -2,13 +2,13 @@
 
 A Chrome extension (Manifest V3) that shows, in real time, how much of the
 page you're looking at is talking to third parties: ad/analytics trackers,
-third-party cookies, and fingerprinting-style script behavior — condensed
+third-party cookies, and fingerprinting-style script behavior, condensed
 into a single 0-100 exposure score.
 
 ## Why this exists
 
 Most people have no idea how many third parties a single page load talks
-to. This isn't a full privacy suite — it's a focused, honest instrument:
+to. This isn't a full privacy suite- it's a focused, honest instrument:
 open it on any page and see what's actually happening, with the option to
 block the trackers it recognizes.
 
@@ -21,7 +21,7 @@ block the trackers it recognizes.
 | **Fingerprinting signals** | The page's own JS environment is instrumented (before page scripts run) to detect canvas fingerprinting (`toDataURL`/`getImageData`), audio fingerprinting (`AudioContext` oscillator/analyser), and `navigator.plugins` enumeration. |
 
 The **exposure score** is a simple weighted sum (trackers × 8 + cookies × 6
-+ fingerprint signals × 18, capped at 100) — intentionally simple and
++ fingerprint signals × 18, capped at 100)- intentionally simple and
 inspectable rather than a black-box ML score.
 
 ## Install (load unpacked, for now)
@@ -38,7 +38,7 @@ exposure band (teal = low, amber = medium, coral = high).
 
 The toggle at the bottom of the popup enables a `declarativeNetRequest`
 ruleset (`rules/tracker_rules.json`, generated from the same tracker list)
-that blocks requests to known tracker domains — device-wide, not
+that blocks requests to known tracker domains- device-wide, not
 per-site, in this v1.
 
 ## Architecture
