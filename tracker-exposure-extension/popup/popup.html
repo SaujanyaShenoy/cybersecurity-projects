@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tracker & Privacy Exposure Monitor</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="panel">
+    <header class="header">
+      <div class="header-title">Exposure monitor</div>
+      <div class="header-domain" id="domain">—</div>
+    </header>
+
+    <section class="gauge-section">
+      <svg id="gauge" viewBox="0 0 200 120" class="gauge">
+        <path id="gauge-track" class="gauge-track" />
+        <path id="gauge-fill" class="gauge-fill" />
+      </svg>
+      <div class="gauge-readout">
+        <div class="gauge-score" id="score">0</div>
+        <div class="gauge-label" id="band-label">Reading page…</div>
+      </div>
+    </section>
+
+    <section class="stats-row">
+      <div class="stat">
+        <div class="stat-value" id="tracker-count">0</div>
+        <div class="stat-label">Trackers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="cookie-count">0</div>
+        <div class="stat-label">3rd-party cookies</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="fp-count">0</div>
+        <div class="stat-label">Fingerprint signals</div>
+      </div>
+    </section>
+
+    <section class="list-section" id="tracker-list-section">
+      <div class="section-title">Detected trackers</div>
+      <div class="list" id="tracker-list">
+        <div class="empty-state">No third-party trackers observed yet.</div>
+      </div>
+    </section>
+
+    <section class="list-section" id="fp-list-section" hidden>
+      <div class="section-title">Fingerprinting signals</div>
+      <div class="list" id="fp-list"></div>
+    </section>
+
+    <footer class="footer">
+      <label class="toggle">
+        <input type="checkbox" id="block-toggle" />
+        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+        <span class="toggle-text">Block known trackers on this device</span>
+      </label>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
