@@ -20,7 +20,7 @@ block the trackers it recognizes.
 | **Third-party cookies** | Any `Set-Cookie` response header coming from a domain other than the page's own is counted. |
 | **Fingerprinting signals** | The page's own JS environment is instrumented (before page scripts run) to detect canvas fingerprinting (`toDataURL`/`getImageData`), audio fingerprinting (`AudioContext` oscillator/analyser), and `navigator.plugins` enumeration. |
 
-The **exposure score** is a simple weighted sum (trackers × 8 + cookies × 6 + fingerprint signals × 18, capped at 100)- intentionally simple and
+The **exposure score** is a simple weighted sum (trackers × 8 + cookies × 6 + fingerprint signals × 18, capped at 100) — intentionally simple and
 inspectable rather than a black-box ML score.
 
 ## Install (load unpacked, for now)
