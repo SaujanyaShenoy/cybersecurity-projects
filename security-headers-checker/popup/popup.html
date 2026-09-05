@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Security Headers Checker</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="panel">
+    <header class="header">
+      <div class="header-title">Headers checker</div>
+      <div class="header-domain" id="domain">—</div>
+    </header>
+
+    <section class="gauge-section">
+      <svg id="gauge" viewBox="0 0 200 120" class="gauge">
+        <path id="gauge-track" class="gauge-track" />
+        <path id="gauge-fill" class="gauge-fill" />
+      </svg>
+      <div class="gauge-readout">
+        <div class="gauge-grade" id="grade">—</div>
+        <div class="gauge-label" id="score-label">Reading headers…</div>
+      </div>
+    </section>
+
+    <section class="list-section" id="checks-section">
+      <div class="section-title">Header checks</div>
+      <div class="list" id="checks-list"></div>
+    </section>
+
+    <section class="fix-section" id="fix-section" hidden>
+      <div class="section-title">Suggested fix</div>
+      <pre class="fix-snippet" id="fix-snippet"></pre>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
