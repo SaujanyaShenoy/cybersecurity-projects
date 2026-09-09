@@ -1,0 +1,24 @@
+<!--
+  MITRE ATT&CK: T1087 - Account Discovery
+
+  Detects account enumeration using the Windows
+  net.exe or net1.exe utilities.
+
+  Telemetry source:
+  Sysmon Event ID 1 - Process Create
+-->
+
+<group name="windows,sysmon,account_discovery,">
+
+<rule id="100100" level="8">
+  <if_group>sysmon_event1</if_group>
+  <field name="win.eventdata.image" type="pcre2">(?i)\\net1?\.exe$</field>
+  <field name="win.eventdata.commandLine" type="pcre2">(?i)\buser\b</field>
+  <field name="win.eventdata.commandLine" type="pcre2" negate="yes">(?i)/(add|delete)\b</field>
+  <description>Custom detection: Windows account discovery using net.exe/net1.e</description>
+  <mitre>
+    <id>T1087.001</id>
+  </mitre>
+</rule>
+
+</group>

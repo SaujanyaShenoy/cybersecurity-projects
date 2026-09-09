@@ -1,0 +1,26 @@
+# VM files
+*.vmdk
+*.vmem
+*.vmss
+*.vmsn
+*.nvram
+
+# Installers / archives
+*.msi
+*.exe
+*.tar
+*.tar.gz
+*.zip
+
+# Logs
+*.log
+
+# Secrets / environment files
+.env
+*.key
+*.pem
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
